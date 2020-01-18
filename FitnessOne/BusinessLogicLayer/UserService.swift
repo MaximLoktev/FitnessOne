@@ -11,6 +11,7 @@ import Foundation
 protocol UserService {
     func createUser(user: UserModel, completion: @escaping (Result<UserModel, APIError>) -> Void)
     func fetchUser(completion: @escaping (Result<UserModel, APIError>) -> Void)
+    func isUserCreated(completion: @escaping (Bool) -> Void)
 }
 
 class UserServiceImpl: UserService {
@@ -52,6 +53,17 @@ class UserServiceImpl: UserService {
                 completion(.success(user))
             case .failure(let error):
                 completion(.failure(.fetchCoreDataObjectError(error)))
+            }
+        }
+    }
+    
+    func isUserCreated(completion: @escaping (Bool) -> Void) {
+        coreData.fetchObject(entity: User.self, context: coreData.context) { result in
+            switch result {
+            case .success:
+                completion(true)
+            case .failure:
+                completion(false)
             }
         }
     }

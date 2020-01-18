@@ -46,9 +46,19 @@ class RootViewController: UINavigationController, RootModuleInput {
     
     private func startLoading() {
         if userPreferences.onboardingIsShown {
-            let viewController = FullNameInputController(fillUserService: fillUserService)
-            viewController.moduleOutput = self
-            viewControllers = [viewController]
+            userService.isUserCreated { [weak self] isCreated in
+                guard let self = self else {
+                    return
+                }
+                if isCreated {
+                    let viewController = MainController()
+                    self.viewControllers = [viewController]
+                } else {
+                    let viewController = FullNameInputController(fillUserService: self.fillUserService)
+                    viewController.moduleOutput = self
+                    self.viewControllers = [viewController]
+                }
+            }
         } else {
             let viewController = GreetingController(userPreferences: userPreferences)
             viewController.moduleOutput = self
@@ -92,9 +102,9 @@ extension RootViewController: BirthdayInputModuleOutput {
 extension RootViewController: ProportionsInputModuleOutput {
     
     func aboutMeThreeModuleDidShowMain() {
-        let viewController = MainController(fillUserService: fillUserService)
+        let viewController = MainController()
         //viewController.moduleOutput = self
-        pushViewController(viewController, animated: true)
+        setViewControllers([viewController], animated: true)
     }
     
     func aboutMeThreeModuleDidShowAboutMeTwo() {

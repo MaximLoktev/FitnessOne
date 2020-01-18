@@ -23,7 +23,6 @@
 		F56D72C623C9320C00E65042 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D72C523C9320C00E65042 /* UserService.swift */; };
 		F58361EA23A62A6100D5E554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58361E923A62A6100D5E554 /* AppDelegate.swift */; };
 		F58361EE23A62A6100D5E554 /* GreetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58361ED23A62A6100D5E554 /* GreetingController.swift */; };
-		F58361F323A62A6200D5E554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58361F223A62A6200D5E554 /* Assets.xcassets */; };
 		F58361F623A62A6200D5E554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58361F423A62A6200D5E554 /* LaunchScreen.storyboard */; };
 		F583620423A62D2200D5E554 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583620323A62D2200D5E554 /* GreetingView.swift */; };
 		F583620A23A63BED00D5E554 /* GreetingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583620923A63BED00D5E554 /* GreetingCollectionView.swift */; };
@@ -34,6 +33,14 @@
 		F5B8533123C49E4300AA8F43 /* InsetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8533023C49E4300AA8F43 /* InsetPickerView.swift */; };
 		F5C288B223C23037000C1164 /* FitnessOne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5C288B023C23037000C1164 /* FitnessOne.xcdatamodeld */; };
 		F5C288B423C26533000C1164 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C288B323C26533000C1164 /* UIBarButtonItem+Extensions.swift */; };
+		F5D033F823D3441C00EB35F0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D033F723D3441C00EB35F0 /* Menu.swift */; };
+		F5D033FA23D344F000EB35F0 /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D033F923D344F000EB35F0 /* MainCollectionView.swift */; };
+		F5D033FC23D3465600EB35F0 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D033FB23D3465600EB35F0 /* MainDataManager.swift */; };
+		F5D033FE23D3471A00EB35F0 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D033FD23D3471A00EB35F0 /* MainCell.swift */; };
+		F5D0340023D3490400EB35F0 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D033FF23D3490400EB35F0 /* InputView.swift */; };
+		F5D0340223D3497100EB35F0 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0340123D3497100EB35F0 /* CALayer+Extensions.swift */; };
+		F5D0340423D349CE00EB35F0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0340323D349CE00EB35F0 /* UIColor+Extensions.swift */; };
+		F5D0340623D3542900EB35F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D0340523D3542900EB35F0 /* Assets.xcassets */; };
 		F5D5750B23C354EF005F9AF6 /* FillUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5750A23C354EF005F9AF6 /* FillUserService.swift */; };
 		F5D5750D23C35A72005F9AF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5750C23C35A72005F9AF6 /* User.swift */; };
 		F5F0110B23AF7B3C000B949C /* BirthdayInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F0110A23AF7B3C000B949C /* BirthdayInputView.swift */; };
@@ -64,7 +71,6 @@
 		F58361E623A62A6100D5E554 /* FitnessOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58361E923A62A6100D5E554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F58361ED23A62A6100D5E554 /* GreetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingController.swift; sourceTree = "<group>"; };
-		F58361F223A62A6200D5E554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F58361F523A62A6200D5E554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F58361F723A62A6200D5E554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F583620323A62D2200D5E554 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,14 @@
 		F5B8533023C49E4300AA8F43 /* InsetPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetPickerView.swift; sourceTree = "<group>"; };
 		F5C288B123C23037000C1164 /* FitnessOne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessOne.xcdatamodel; sourceTree = "<group>"; };
 		F5C288B323C26533000C1164 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		F5D033F723D3441C00EB35F0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F5D033F923D344F000EB35F0 /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
+		F5D033FB23D3465600EB35F0 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
+		F5D033FD23D3471A00EB35F0 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		F5D033FF23D3490400EB35F0 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		F5D0340123D3497100EB35F0 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		F5D0340323D349CE00EB35F0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F5D0340523D3542900EB35F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5D5750A23C354EF005F9AF6 /* FillUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillUserService.swift; sourceTree = "<group>"; };
 		F5D5750C23C35A72005F9AF6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5F0110A23AF7B3C000B949C /* BirthdayInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayInputView.swift; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				F534914623B7C1E300277892 /* MainController.swift */,
+				F5D033FB23D3465600EB35F0 /* MainDataManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				F534914423B7C1D300277892 /* MainView.swift */,
+				F5D033F923D344F000EB35F0 /* MainCollectionView.swift */,
+				F5D033FD23D3471A00EB35F0 /* MainCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +208,7 @@
 				F55E67FC23A9607A000BFD3C /* InsetTextField.swift */,
 				F5B8533023C49E4300AA8F43 /* InsetPickerView.swift */,
 				F531E9B423CD072900B068FE /* AlertWindowController.swift */,
+				F5D033FF23D3490400EB35F0 /* InputView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -229,8 +247,8 @@
 		F58361FD23A62A8E00D5E554 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0340523D3542900EB35F0 /* Assets.xcassets */,
 				F5C288B023C23037000C1164 /* FitnessOne.xcdatamodeld */,
-				F58361F223A62A6200D5E554 /* Assets.xcassets */,
 				F58361F423A62A6200D5E554 /* LaunchScreen.storyboard */,
 				F58361F723A62A6200D5E554 /* Info.plist */,
 			);
@@ -241,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D5750C23C35A72005F9AF6 /* User.swift */,
+				F5D033F723D3441C00EB35F0 /* Menu.swift */,
 			);
 			path = ModelsLayer;
 			sourceTree = "<group>";
@@ -303,6 +322,8 @@
 				F531E9B623CD076B00B068FE /* UIViewController+Extensions.swift */,
 				F531E9B823CD089D00B068FE /* UIAlertViewController+Extensions.swift */,
 				F531E9BA23CD100600B068FE /* UIResponder+Extensions.swift */,
+				F5D0340123D3497100EB35F0 /* CALayer+Extensions.swift */,
+				F5D0340323D349CE00EB35F0 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,8 +472,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D0340623D3542900EB35F0 /* Assets.xcassets in Resources */,
 				F58361F623A62A6200D5E554 /* LaunchScreen.storyboard in Resources */,
-				F58361F323A62A6200D5E554 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +532,7 @@
 				F5C288B423C26533000C1164 /* UIBarButtonItem+Extensions.swift in Sources */,
 				F5F0110F23AF7B5C000B949C /* ProportionsInputView.swift in Sources */,
 				F5C288B223C23037000C1164 /* FitnessOne.xcdatamodeld in Sources */,
+				F5D033FC23D3465600EB35F0 /* MainDataManager.swift in Sources */,
 				F534914523B7C1D300277892 /* MainView.swift in Sources */,
 				F5F0111723AFFF92000B949C /* RootViewController.swift in Sources */,
 				F583620F23A63EA000D5E554 /* Greeting.swift in Sources */,
@@ -520,8 +542,11 @@
 				F5F0111123AF7B9A000B949C /* ProportionsInputController.swift in Sources */,
 				F534914723B7C1E300277892 /* MainController.swift in Sources */,
 				F5F0110B23AF7B3C000B949C /* BirthdayInputView.swift in Sources */,
+				F5D0340423D349CE00EB35F0 /* UIColor+Extensions.swift in Sources */,
+				F5D033FA23D344F000EB35F0 /* MainCollectionView.swift in Sources */,
 				F58361EE23A62A6100D5E554 /* GreetingController.swift in Sources */,
 				F531E9B523CD072900B068FE /* AlertWindowController.swift in Sources */,
+				F5D0340223D3497100EB35F0 /* CALayer+Extensions.swift in Sources */,
 				F5B8533123C49E4300AA8F43 /* InsetPickerView.swift in Sources */,
 				F583620C23A63DF700D5E554 /* GreetingDataManager.swift in Sources */,
 				F583621423A6467F00D5E554 /* UICollectionView+Extensions.swift in Sources */,
@@ -529,9 +554,12 @@
 				F531E9B923CD089D00B068FE /* UIAlertViewController+Extensions.swift in Sources */,
 				F56D72C423C9294F00E65042 /* FullNameInputView.swift in Sources */,
 				F55E67FD23A9607A000BFD3C /* InsetTextField.swift in Sources */,
+				F5D033FE23D3471A00EB35F0 /* MainCell.swift in Sources */,
 				F531E9B723CD076B00B068FE /* UIViewController+Extensions.swift in Sources */,
 				F5F0111323AFFCD1000B949C /* Locale+Extension.swift in Sources */,
 				F55E67F823A94700000BFD3C /* FullNameInputController.swift in Sources */,
+				F5D0340023D3490400EB35F0 /* InputView.swift in Sources */,
+				F5D033F823D3441C00EB35F0 /* Menu.swift in Sources */,
 				F583620423A62D2200D5E554 /* GreetingView.swift in Sources */,
 				F58361EA23A62A6100D5E554 /* AppDelegate.swift in Sources */,
 				F583620A23A63BED00D5E554 /* GreetingCollectionView.swift in Sources */,
