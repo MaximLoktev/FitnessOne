@@ -9,17 +9,19 @@
 import UIKit
 
 internal protocol MainModuleOutput: class {
-    
+    func mainModuleDidShowNextScreen(screen: ScreensMenu)
 }
 
 internal class MainController: UIViewController, MainViewDelegate {
 
-    // MARK: - View life cycle
+    // MARK: - Properties
     
     weak var moduleOutput: MainModuleOutput?
     private let dataManager = MainDataManeger()
     
     var moduleView: MainView!
+    
+    // MARK: - View life cycle
     
     override func loadView() {
         moduleView = MainView(frame: UIScreen.main.bounds)
@@ -33,6 +35,9 @@ internal class MainController: UIViewController, MainViewDelegate {
         navigationItem.title = "Главное меню"
         
         moduleView.setupDataManager(dataManager: dataManager)
+        dataManager.onSelectNextScreen = { [weak self] screen in
+            self?.moduleOutput?.mainModuleDidShowNextScreen(screen: screen)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

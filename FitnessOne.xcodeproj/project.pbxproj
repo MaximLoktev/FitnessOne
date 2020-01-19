@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C61BEE60DC9B465B7D6D39E9 /* Pods_FitnessOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB34AB7A66780987E29094E /* Pods_FitnessOne.framework */; };
+		F50B958C23D4342500766D83 /* ManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B958B23D4342500766D83 /* ManualView.swift */; };
+		F50B958E23D4344800766D83 /* ManualController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B958D23D4344800766D83 /* ManualController.swift */; };
+		F50B959923D437EB00766D83 /* ManualDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B959823D437EB00766D83 /* ManualDataManager.swift */; };
+		F50B959B23D4382000766D83 /* ManualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B959A23D4382000766D83 /* ManualCell.swift */; };
+		F50B959D23D4395500766D83 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B959C23D4395500766D83 /* UITableView+Extensions.swift */; };
+		F50B959F23D4563500766D83 /* Manual.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B959E23D4563500766D83 /* Manual.swift */; };
 		F531E9B523CD072900B068FE /* AlertWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531E9B423CD072900B068FE /* AlertWindowController.swift */; };
 		F531E9B723CD076B00B068FE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531E9B623CD076B00B068FE /* UIViewController+Extensions.swift */; };
 		F531E9B923CD089D00B068FE /* UIAlertViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531E9B823CD089D00B068FE /* UIAlertViewController+Extensions.swift */; };
@@ -55,6 +61,12 @@
 		439AC2084E99235DE18B31A0 /* Pods-FitnessOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessOne.release.xcconfig"; path = "Target Support Files/Pods-FitnessOne/Pods-FitnessOne.release.xcconfig"; sourceTree = "<group>"; };
 		8765DFBA550E33D5F04CE999 /* Pods-FitnessOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessOne.debug.xcconfig"; path = "Target Support Files/Pods-FitnessOne/Pods-FitnessOne.debug.xcconfig"; sourceTree = "<group>"; };
 		9DB34AB7A66780987E29094E /* Pods_FitnessOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50B958B23D4342500766D83 /* ManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualView.swift; sourceTree = "<group>"; };
+		F50B958D23D4344800766D83 /* ManualController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualController.swift; sourceTree = "<group>"; };
+		F50B959823D437EB00766D83 /* ManualDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualDataManager.swift; sourceTree = "<group>"; };
+		F50B959A23D4382000766D83 /* ManualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCell.swift; sourceTree = "<group>"; };
+		F50B959C23D4395500766D83 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		F50B959E23D4563500766D83 /* Manual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manual.swift; sourceTree = "<group>"; };
 		F531E9B423CD072900B068FE /* AlertWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindowController.swift; sourceTree = "<group>"; };
 		F531E9B623CD076B00B068FE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F531E9B823CD089D00B068FE /* UIAlertViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -129,6 +141,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F50B958823D433AC00766D83 /* Manual */ = {
+			isa = PBXGroup;
+			children = (
+				F50B958923D433F600766D83 /* View */,
+				F50B958A23D433FD00766D83 /* Controller */,
+			);
+			path = Manual;
+			sourceTree = "<group>";
+		};
+		F50B958923D433F600766D83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50B958B23D4342500766D83 /* ManualView.swift */,
+				F50B959A23D4382000766D83 /* ManualCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F50B958A23D433FD00766D83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F50B958D23D4344800766D83 /* ManualController.swift */,
+				F50B959823D437EB00766D83 /* ManualDataManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F534914123B7C08E00277892 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +220,6 @@
 				F5F0110323AF7AB1000B949C /* FullNameInput */,
 				F5F0110423AF7AE6000B949C /* BirthdayInput */,
 				F5F0110523AF7AF1000B949C /*  ProportionsInput */,
-				F534914123B7C08E00277892 /* Main */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -260,6 +298,7 @@
 			children = (
 				F5D5750C23C35A72005F9AF6 /* User.swift */,
 				F5D033F723D3441C00EB35F0 /* Menu.swift */,
+				F50B959E23D4563500766D83 /* Manual.swift */,
 			);
 			path = ModelsLayer;
 			sourceTree = "<group>";
@@ -272,6 +311,8 @@
 				F5F0111423AFFF46000B949C /* Root */,
 				F583620023A62BAA00D5E554 /* Greeting */,
 				F55E67F423A946CD000BFD3C /* Auth */,
+				F534914123B7C08E00277892 /* Main */,
+				F50B958823D433AC00766D83 /* Manual */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -317,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				F583621323A6467F00D5E554 /* UICollectionView+Extensions.swift */,
+				F50B959C23D4395500766D83 /* UITableView+Extensions.swift */,
 				F5F0111223AFFCD1000B949C /* Locale+Extension.swift */,
 				F5C288B323C26533000C1164 /* UIBarButtonItem+Extensions.swift */,
 				F531E9B623CD076B00B068FE /* UIViewController+Extensions.swift */,
@@ -533,10 +575,12 @@
 				F5F0110F23AF7B5C000B949C /* ProportionsInputView.swift in Sources */,
 				F5C288B223C23037000C1164 /* FitnessOne.xcdatamodeld in Sources */,
 				F5D033FC23D3465600EB35F0 /* MainDataManager.swift in Sources */,
+				F50B959D23D4395500766D83 /* UITableView+Extensions.swift in Sources */,
 				F534914523B7C1D300277892 /* MainView.swift in Sources */,
 				F5F0111723AFFF92000B949C /* RootViewController.swift in Sources */,
 				F583620F23A63EA000D5E554 /* Greeting.swift in Sources */,
 				F534914D23B7CFDA00277892 /* CoreData.swift in Sources */,
+				F50B959B23D4382000766D83 /* ManualCell.swift in Sources */,
 				F583621123A645B000D5E554 /* GreetingCell.swift in Sources */,
 				F534914B23B7C64100277892 /* UserPreferences.swift in Sources */,
 				F5F0111123AF7B9A000B949C /* ProportionsInputController.swift in Sources */,
@@ -546,9 +590,11 @@
 				F5D033FA23D344F000EB35F0 /* MainCollectionView.swift in Sources */,
 				F58361EE23A62A6100D5E554 /* GreetingController.swift in Sources */,
 				F531E9B523CD072900B068FE /* AlertWindowController.swift in Sources */,
+				F50B958C23D4342500766D83 /* ManualView.swift in Sources */,
 				F5D0340223D3497100EB35F0 /* CALayer+Extensions.swift in Sources */,
 				F5B8533123C49E4300AA8F43 /* InsetPickerView.swift in Sources */,
 				F583620C23A63DF700D5E554 /* GreetingDataManager.swift in Sources */,
+				F50B958E23D4344800766D83 /* ManualController.swift in Sources */,
 				F583621423A6467F00D5E554 /* UICollectionView+Extensions.swift in Sources */,
 				F5D5750B23C354EF005F9AF6 /* FillUserService.swift in Sources */,
 				F531E9B923CD089D00B068FE /* UIAlertViewController+Extensions.swift in Sources */,
@@ -561,7 +607,9 @@
 				F5D0340023D3490400EB35F0 /* InputView.swift in Sources */,
 				F5D033F823D3441C00EB35F0 /* Menu.swift in Sources */,
 				F583620423A62D2200D5E554 /* GreetingView.swift in Sources */,
+				F50B959923D437EB00766D83 /* ManualDataManager.swift in Sources */,
 				F58361EA23A62A6100D5E554 /* AppDelegate.swift in Sources */,
+				F50B959F23D4563500766D83 /* Manual.swift in Sources */,
 				F583620A23A63BED00D5E554 /* GreetingCollectionView.swift in Sources */,
 				F5F0110D23AF7B4D000B949C /* BirthdayInputController.swift in Sources */,
 				F534917323B7D76300277892 /* APIError.swift in Sources */,
