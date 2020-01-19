@@ -52,6 +52,7 @@ class RootViewController: UINavigationController, RootModuleInput {
                 }
                 if isCreated {
                     let viewController = MainController()
+                    viewController.moduleOutput = self
                     self.viewControllers = [viewController]
                 } else {
                     let viewController = FullNameInputController(fillUserService: self.fillUserService)
@@ -103,11 +104,47 @@ extension RootViewController: ProportionsInputModuleOutput {
     
     func aboutMeThreeModuleDidShowMain() {
         let viewController = MainController()
-        //viewController.moduleOutput = self
+        viewController.moduleOutput = self
         setViewControllers([viewController], animated: true)
     }
     
     func aboutMeThreeModuleDidShowAboutMeTwo() {
         popViewController(animated: true)
+    }
+}
+
+extension RootViewController: MainModuleOutput {
+    
+    func mainModuleDidShowNextScreen(screen: ScreensMenu) {
+        switch screen {
+        case .weight:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .progress:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .food:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .run:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .exercises:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .manual:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .support:
+            let viewController = ManualController()
+            //viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        }
     }
 }

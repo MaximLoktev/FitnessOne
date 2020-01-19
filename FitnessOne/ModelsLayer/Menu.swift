@@ -11,4 +11,15 @@ import Foundation
 struct Menu {
     let name: String
     let image: String
+    let screen: ScreensMenu
+}
+
+enum ScreensMenu {
+    case weight
+    case progress
+    case food
+    case run
+    case exercises
+    case manual
+    case support
 }
