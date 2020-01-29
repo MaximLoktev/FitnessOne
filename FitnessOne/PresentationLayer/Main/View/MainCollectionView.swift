@@ -21,7 +21,7 @@ class MainCollectionView: UICollectionView {
         
         backgroundColor = .clear
         
-        contentInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0)
+        contentInset = UIEdgeInsets(top: 16.0, left: 8.0, bottom: 0.0, right: 8.0)
         showsHorizontalScrollIndicator = false
         alwaysBounceVertical = true
         

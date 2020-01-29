@@ -9,14 +9,10 @@
 import UIKit
 
 internal protocol SupportModuleOutput: class {
-
+    func supportModuleDidBack()
 }
 
-internal protocol SupportModuleInput: class {
-
-}
-
-internal class SupportViewController: UIViewController, SupportModuleInput, SupportViewDelegate {
+internal class SupportViewController: UIViewController, SupportViewDelegate {
 
     // MARK: - Properties
 
@@ -34,8 +30,17 @@ internal class SupportViewController: UIViewController, SupportModuleInput, Supp
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)))
+        navigationItem.leftBarButtonItem = backBarButton
+        navigationItem.title = "Поддержка"
     }
-
-    // MARK: - SupportViewDelegate
     
+    // MARK: - Actions
+    @objc
+    private func backButtonAction(_ sender: UIBarButtonItem) {
+        moduleOutput?.supportModuleDidBack()
+    }
 }
+
+

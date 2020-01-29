@@ -35,6 +35,7 @@ internal class ProportionsInputView: UIView {
     private let photoImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "photo")
+        image.clipsToBounds = true
         image.layer.cornerRadius = 30
         image.contentMode = .scaleToFill
         
@@ -184,7 +185,7 @@ internal class ProportionsInputView: UIView {
     
     @objc
     func nextButtonAction(_ sender: UIButton) {
-        let isValidData =  weightTextField.text == "" || heightTextField.text == ""
+        let isValidData = weightTextField.text == "" || heightTextField.text == ""
         if !isValidData {
             let photo = photoImageView.image?.pngData()
             delegate?.viewDidTapNextButton(self, photo: photo, weight: weightTextField.text,
@@ -227,7 +228,7 @@ internal class ProportionsInputView: UIView {
             make.left.equalTo(photoImageView.snp.right).offset(35.0)
         }
         skillTextField.snp.makeConstraints { make in
-            make.height.equalTo(44.0)
+            make.height.equalTo(40.0)
             make.top.equalTo(heightTextField.snp.bottom).offset(24.0)
             make.left.right.equalToSuperview().inset(16.0)
         }

@@ -47,6 +47,7 @@ internal class FullNameInputView: UIView {
         textField.backgroundColor = #colorLiteral(red: 0.9085735342, green: 0.9085735342, blue: 0.9085735342, alpha: 1)
         textField.layer.cornerRadius = 4.0
         textField.clearButtonMode = .always
+        textField.autocorrectionType = .no
         
         return textField
     }()
@@ -69,6 +70,7 @@ internal class FullNameInputView: UIView {
         textField.backgroundColor = #colorLiteral(red: 0.9085735342, green: 0.9085735342, blue: 0.9085735342, alpha: 1)
         textField.layer.cornerRadius = 4.0
         textField.clearButtonMode = .always
+        textField.autocorrectionType = .no
         
         return textField
     }()
@@ -133,7 +135,7 @@ internal class FullNameInputView: UIView {
     
     private func makeConstraints() {
         heading.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(24.0)
+            make.top.equalToSuperview().offset(88.0)
             make.left.right.equalToSuperview().inset(16.0)
         }
         nameLabel.snp.makeConstraints { make in

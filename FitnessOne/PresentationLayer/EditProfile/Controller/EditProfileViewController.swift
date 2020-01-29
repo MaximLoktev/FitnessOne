@@ -9,14 +9,10 @@
 import UIKit
 
 internal protocol EditProfileModuleOutput: class {
-
+    func editProfileModuleDidBack()
 }
 
-internal protocol EditProfileModuleInput: class {
-
-}
-
-internal class EditProfileViewController: UIViewController, EditProfileModuleInput, EditProfileViewDelegate {
+internal class EditProfileViewController: UIViewController, EditProfileViewDelegate {
 
     // MARK: - Properties
 
@@ -34,8 +30,25 @@ internal class EditProfileViewController: UIViewController, EditProfileModuleInp
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)))
+        let editingBarButton = UIBarButtonItem.editingBarButton(target: self, action: #selector(editingButtonAction(_:)))
+        //editingBarButton.image = UIImage(named: "checked")
+        navigationItem.rightBarButtonItem = editingBarButton
+        navigationItem.leftBarButtonItem = backBarButton
+        navigationItem.title = "Редактирование профиля"
     }
 
-    // MARK: - EditProfileViewDelegate
+    // MARK: - Actions
+    
+    @objc
+    private func editingButtonAction(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @objc
+    private func backButtonAction(_ sender: UIBarButtonItem) {
+        moduleOutput?.editProfileModuleDidBack()
+    }
     
 }

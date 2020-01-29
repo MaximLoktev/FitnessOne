@@ -17,6 +17,7 @@ struct Menu {
 enum ScreensMenu {
     case weight
     case progress
+    case profile
     case food
     case run
     case exercises

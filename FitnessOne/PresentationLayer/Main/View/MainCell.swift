@@ -24,9 +24,9 @@ internal class MainCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15.0)
+        label.font = UIFont(name: "PTSerif-Regular", size: 15.0)
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = #colorLiteral(red: 0.8702445984, green: 0.5425629822, blue: 0.4017455572, alpha: 1)
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         
         return label

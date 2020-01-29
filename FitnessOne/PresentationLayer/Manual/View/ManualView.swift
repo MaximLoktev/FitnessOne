@@ -22,6 +22,7 @@ internal class ManualView: UIView {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(cellClass: ManualCell.self)
+        tableView.tableFooterView = UIView()
         
         return tableView
     }()

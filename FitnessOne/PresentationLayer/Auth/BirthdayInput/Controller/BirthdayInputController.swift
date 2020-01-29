@@ -42,22 +42,12 @@ internal class BirthdayInputController: UIViewController, BirthdayInputViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)), imageName: "back")
+        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)))
         navigationItem.leftBarButtonItem = backBarButton
         
         let gender = fillUserService.getGender()
         let birthday = fillUserService.getBirthday()
         moduleView.setupLoad(gender: gender, birthday: birthday)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     @objc

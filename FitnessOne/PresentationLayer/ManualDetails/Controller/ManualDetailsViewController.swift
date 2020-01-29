@@ -9,33 +9,49 @@
 import UIKit
 
 internal protocol ManualDetailsModuleOutput: class {
-
+    func manualDetailsModuleDidBack()
 }
 
-internal protocol ManualDetailsModuleInput: class {
-
-}
-
-internal class ManualDetailsViewController: UIViewController, ManualDetailsModuleInput, ManualDetailsViewDelegate {
+internal class ManualDetailsViewController: UIViewController, ManualDetailsViewDelegate {
 
     // MARK: - Properties
 
     weak var moduleOutput: ManualDetailsModuleOutput?
 
     var moduleView: ManualDetailsView!
+    
+    var item: Manual
+    
+    init(item: Manual) {
+        self.item = item
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - View life cycle
 
     override func loadView() {
         moduleView = ManualDetailsView(frame: UIScreen.main.bounds)
-        moduleView.delegate = self
         view = moduleView
+        moduleView.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)))
+        navigationItem.leftBarButtonItem = backBarButton
+        navigationItem.title = item.title
+        
+        moduleView.setupLoad(item: item)
     }
-
-    // MARK: - ManualDetailsViewDelegate
     
+    // MARK: - Actions
+    @objc
+    private func backButtonAction(_ sender: UIBarButtonItem) {
+        moduleOutput?.manualDetailsModuleDidBack()
+    }
 }

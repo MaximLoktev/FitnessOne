@@ -17,6 +17,7 @@ internal class MainController: UIViewController, MainViewDelegate {
     // MARK: - Properties
     
     weak var moduleOutput: MainModuleOutput?
+    
     private let dataManager = MainDataManeger()
     
     var moduleView: MainView!
