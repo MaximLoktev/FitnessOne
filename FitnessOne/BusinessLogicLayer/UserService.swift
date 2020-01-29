@@ -70,8 +70,8 @@ class UserServiceImpl: UserService {
     
     private func mapUser(user: User) -> UserModel? {
         guard
-            let gender = mapGender(gender: user.gender ?? ""),
-            let skill = mapSkill(skill: user.skills ?? "")
+            let gender = Gender(rawValue: user.gender ?? ""),
+            let skill = Skill(rawValue: user.skills ?? "")
         else {
             return nil
         }

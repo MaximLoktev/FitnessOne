@@ -47,19 +47,19 @@ internal class ProportionsInputController: UIViewController, ProportionsInputVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)), imageName: "back")
+        let backBarButton = UIBarButtonItem.backBarButton(target: self, action: #selector(backButtonAction(_:)))
         navigationItem.leftBarButtonItem = backBarButton
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
     
     // MARK: - Actions
     
@@ -110,8 +110,8 @@ internal class ProportionsInputController: UIViewController, ProportionsInputVie
 extension ProportionsInputController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        moduleView?.setup(image: info[.editedImage] as? UIImage)
         dismiss(animated: true, completion: nil)
+        moduleView?.setup(image: info[.editedImage] as? UIImage)
     }
     
     func setupPicker(sourceType: UIImagePickerController.SourceType) {
@@ -119,6 +119,7 @@ extension ProportionsInputController: UIImagePickerControllerDelegate, UINavigat
             DispatchQueue.main.async { [weak self] in
                 let imagePickerController = UIImagePickerController()
                 imagePickerController.sourceType = sourceType
+                imagePickerController.allowsEditing = true
                 imagePickerController.delegate = self
                 imagePickerController.mediaTypes = ["public.image"]
                 

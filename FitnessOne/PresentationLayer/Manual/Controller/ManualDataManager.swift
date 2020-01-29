@@ -11,22 +11,24 @@ import UIKit
 internal class ManualDataManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
-       
-    var rows: [String] = ["ewrwe", "ewr6676we"]
+    
+    var onSelectManual: ((Manual) -> Void)?
+    
+    var items: [Manual] = []
     
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return rows.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row = rows[indexPath.row]
+        let item = items[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withClass: ManualCell.self, forIndexPath: indexPath)
-        cell.setupCell(title: row)
+        cell.setupCell(title: item.title)
         
         return cell
     }
@@ -36,6 +38,11 @@ internal class ManualDataManager: NSObject, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        print(indexPath.row)
+        let item = items[indexPath.row]
+        onSelectManual?(item)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
     }
 }

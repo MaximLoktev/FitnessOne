@@ -15,12 +15,21 @@ internal class ManualCell: UITableViewCell {
     
      let cellLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24.0)
-        label.textAlignment = .center
+        label.font = UIFont(name: "PTSerif-Regular", size: 17.0)
+        label.textAlignment = .left
         label.textColor = .black
         label.backgroundColor = .clear
 
         return label
+    }()
+    
+    private let imageCell: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "fast-forward")?.withRenderingMode(.alwaysTemplate)
+        image.tintColor = UIColor.gray.withAlphaComponent(0.5)
+        image.contentMode = .scaleAspectFill
+        
+        return image
     }()
     
     // MARK: - Init
@@ -31,6 +40,7 @@ internal class ManualCell: UITableViewCell {
         backgroundColor = .clear
         
         addSubview(cellLabel)
+        addSubview(imageCell)
         
         makeConstraints()
     }
@@ -48,9 +58,14 @@ internal class ManualCell: UITableViewCell {
     // MARK: - Layout
     
     private func makeConstraints() {
-        cellLabel.snp.makeConstraints { mask in
-            mask.left.right.equalToSuperview().inset(16.0)
-            mask.top.equalToSuperview().offset(10.0)
+        cellLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(16.0)
+            make.centerY.equalToSuperview()
+        }
+        imageCell.snp.makeConstraints { make in
+            make.height.width.equalTo(16.0)
+            make.right.equalToSuperview().offset(-16.0)
+            make.centerY.equalToSuperview()
         }
     }
 }

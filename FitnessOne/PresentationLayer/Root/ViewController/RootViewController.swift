@@ -18,15 +18,18 @@ class RootViewController: UINavigationController, RootModuleInput {
     
     private lazy var userPreferences: UserPreferences = UserPreferencesImpl(userDefaults: UserDefaults.standard)
     private lazy var fillUserService: FillUserService = FillUserServiceImpl()
+    private lazy var localDataService: LocalDataService = LocalDataServiceImpl()
     private lazy var coreData: CoreData = CoreData()
     private lazy var userService: UserService = UserServiceImpl(coreData: coreData)
     
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = true
+        navigationBar.barTintColor = #colorLiteral(red: 0.9831817746, green: 0.6092354655, blue: 0.4419304729, alpha: 1)
+        navigationBar.tintColor = .white
+        navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white,
+                                             .font : UIFont.systemFont(ofSize: 20.0)]
+        navigationBar.isTranslucent = false
         view.backgroundColor = .clear
     }
     
@@ -118,33 +121,84 @@ extension RootViewController: MainModuleOutput {
     func mainModuleDidShowNextScreen(screen: ScreensMenu) {
         switch screen {
         case .weight:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .progress:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
+            pushViewController(viewController, animated: true)
+        case .profile:
+            let viewController = ProfileViewController(userService: userService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .food:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .run:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .exercises:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .manual:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = ManualController(localDataService: localDataService)
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         case .support:
-            let viewController = ManualController()
-            //viewController.moduleOutput = self
+            let viewController = SupportViewController()
+            viewController.moduleOutput = self
             pushViewController(viewController, animated: true)
         }
+    }
+}
+
+extension RootViewController: ProfileModuleOutput {
+    
+    func profileModuleDidShowEditProfile() {
+        let viewController = EditProfileViewController()
+        viewController.moduleOutput = self
+        pushViewController(viewController, animated: true)
+    }
+    
+    func profileModuleDidBack() {
+        popViewController(animated: true)
+    }
+}
+
+extension RootViewController: EditProfileModuleOutput {
+    
+    func editProfileModuleDidBack() {
+        popViewController(animated: true)
+    }
+}
+
+extension RootViewController: ManualModuleOutput {
+    
+    func manualModuleDidShowSelectManual(item: Manual) {
+        let viewController = ManualDetailsViewController(item: item)
+        viewController.moduleOutput = self
+        pushViewController(viewController, animated: true)
+    }
+    
+    func manualModuleDidBack() {
+        popViewController(animated: true)
+    }
+}
+
+extension RootViewController: ManualDetailsModuleOutput {
+    
+    func manualDetailsModuleDidBack() {
+        popViewController(animated: true)
+    }
+}
+
+extension RootViewController: SupportModuleOutput {
+    
+    func supportModuleDidBack() {
+        popViewController(animated: true)
     }
 }

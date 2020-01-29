@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Manual {
+struct ManualList: Codable {
+    let manuals: [Manual]
+}
+
+struct Manual: Codable {
     let image: String
     let title: String
     let description: String
